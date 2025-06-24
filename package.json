@@ -101,9 +101,6 @@
     },
     "better-sqlite3": {
       "optional": true
-    },
-    "@libsql/client" : {
-      "optional" : true
     }
   },
   "lint-staged": {
