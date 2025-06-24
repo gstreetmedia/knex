@@ -30,6 +30,7 @@
     "test": "mocha --exit -t 10000 --config test/mocha-all-config-test.js && npm run test:tape && npm run test:cli",
     "test:coverage": "nyc mocha --exit --check-leaks -t 10000 --config test/mocha-all-config-test.js && npm run test:tape && npm run test:cli",
     "test:everything": "npm run lint:everything && npm run test:coverage",
+    "test:libsql": "cross-env DB=libsql npm run test:db",
     "test:mssql": "cross-env DB=mssql npm run test:db",
     "test:mysql": "cross-env DB=mysql npm run test:db",
     "test:mysql2": "cross-env DB=mysql2 npm run test:db",
@@ -80,6 +81,9 @@
     "tedious": {
       "optional": true
     },
+    "@libsql/client": {
+      "optional": true
+    },
     "mysql": {
       "optional": true
     },
@@ -107,6 +111,7 @@
     "*.js": "eslint --cache --fix"
   },
   "devDependencies": {
+    "@libsql/client": "^0.15.9",
     "@tsconfig/recommended": "^1.0.1",
     "@types/node": "^20.4.0",
     "better-sqlite3": "^9.1.1",
@@ -167,6 +172,7 @@
     "mysql",
     "cockroachdb",
     "sqlite3",
+    "libsql",
     "oracle",
     "mssql",
     "builder",
